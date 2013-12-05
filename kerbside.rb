@@ -19,7 +19,7 @@ class Kerbside
       end.submit
       next_recycling = final_result.parser.xpath("//table[@id='tblRecycling']/tr[4]/td[2]").inner_text
       next_rubbish = final_result.parser.xpath("//table[@id='tblRubbish']/tr[4]/td[2]").inner_text
-      #return an array sorted by date
+      #return a hash sorted by date
       return {
         :recycling => Date.strptime(next_recycling, '%d %b %Y'),
         :rubbish => Date.strptime(next_rubbish, '%d %b %Y')
