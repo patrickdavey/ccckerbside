@@ -1,0 +1,22 @@
+<h1>My house</h1>
+<ul data-role="listview"  data-split-theme="d">
+<% if @days_to_next == 1 %>
+  <li>
+    <img src="/images/<%=@results[0][0]%>.png" />
+    <h3><%=@results[0][0]%> Tomorrow!</h3>
+  </li>
+<% elsif @days_to_next == 0 %>
+  <li>
+    <img src="/images/<%=@results[0][0]%>.png" />
+    <h3><%=@results[0][0]%> Today!</h3>
+  </li>
+<% else %>
+  <li>
+    <img src="/images/<%=@results[0][0]%>.png" />
+    <h3><%=@results[0][0]%> Next</h3>
+    <p>In <%= @days_to_next %> days</p>
+    <p>(<%= @results[0][1].strftime("%a %d %b") %>) </p>
+  </li>
+<% end %>
+</ul>
+
