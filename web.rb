@@ -3,7 +3,6 @@ require 'mechanize'
 require './kerbside'
 require 'date'
 require 'tzinfo'
-require 'pry'
 
 class MySinatraApp < Sinatra::Base
   get '/myhouse' do
